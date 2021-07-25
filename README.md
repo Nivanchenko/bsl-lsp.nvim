@@ -83,6 +83,8 @@ require'lspconfig'.bsllsp.setup {
 :lua vim.lsp.buf.formatting()
 ```
 
-Для полного удовлетворения можно используя плагин nvim-telescope/telescope.nvim вызывать разные команды lsp сервера и получать результат.
-
 Если 1с и vim  для вас не пустой звук. Можно заглянуть вот сюда https://github.com/ava57r/vim-language-1c-bsl
+
+Для полного удовлетворения можно используя плагин **nvim-telescope/telescope.nvim** вызывать разные команды lsp сервера и получать результат.
+
+![telescope_example](https://user-images.githubusercontent.com/36507839/126916579-9770d138-513a-41a3-9b72-459e3041a4cc.gif)
