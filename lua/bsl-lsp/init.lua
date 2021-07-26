@@ -1,7 +1,7 @@
 local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-local name = 'bsl-lsp'
+local name = 'bsllsp'
 
 configs[name] = {
   default_config = {
