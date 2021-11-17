@@ -3,6 +3,26 @@ Lsp-config extension, that make bsl and oscript lsp server work in neovim
 
 Данный плагин расширяет lspconfig и позволяет запускать и подключаться к bsl-language-server (https://github.com/1c-syntax/bsl-language-server)
 
+На данный момент уже не актуально, мой pr приняли в репо Lsp-config. Теперь он из коробки подерживает bsl ls. 
+
+Подключить можно вот так:
+
+```lua
+local util = require 'lspconfig/util'
+
+-- Любым удобным способом указываем путь к бинарю
+local bslbinary = vim.fn.stdpath('data') .. "/bsl-language-server/bin/bsl-language-server"
+
+-- Подключаем модуль lsp конфига, и запускаем анализатор bsl
+require'lspconfig'.bsl_ls.setup {
+    root_dir = function(fname)
+                   return util.find_git_ancestor(fname) or util.path.dirname(fname)
+               end,
+    -- Определяем команду, которой запускается lsp 
+    cmd = {bslbinary, "lsp"}
+}
+```
+
 ## Использование
 
 Скачиваем бинарник bsl-language-server, и кладем в какое-нибудь комфортное место
